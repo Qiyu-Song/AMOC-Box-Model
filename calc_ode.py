@@ -23,12 +23,13 @@ class ode:
         debug    : Debug level (0=None, 1=Basic, 2=InDetails)
         '''
         try:
-          if len(ic) == len(tendfunc(ic)):
-              self.dim = len(ic)
-              print(tendfunc(ic))
+            if len(ic) == np.size(tendfunc(ic)):
+                self.dim = len(ic)
         except:
-          print("IC does not match TendFunc! Quit!")
-          raise SystemExit
+            print(len(ic))
+            print(np.size(tendfunc(ic)))
+            print("IC does not match TendFunc! Quit!")
+            raise SystemExit
 
         self.F      = tendfunc
         self.dt     = dt

@@ -23,6 +23,7 @@ cpa = 1004.0
 c = 5300 * cpa
 rho_o = 1025
 cpo = 4200
+rho_cp = rho_o * cpo
 Boudary_s = np.array(list(map(degree2rad, [-90, -30, 45])))
 Boudary_n = np.array(list(map(degree2rad, [-30, 45, 90])))
 MassLat = masslat(Boudary_s, Boudary_n)
@@ -37,5 +38,5 @@ alpha = np.array([0.4, 0.25, 0.42])
 SurfFrac = np.array([0.16267, 0.22222, 0.21069])
 Q1 = np.array([10, 70, 20])
 Q2 = np.array([50, 50, 50])
-
+Lr = 1 / (2.5e6 * 1000)
 Phis = []
